@@ -1,0 +1,72 @@
+---
+import Logo from './Logo.astro'
+import Features from './Features.astro'
+import Company from './Company.astro'
+import Careers from './Careers.astro'
+import About from './About.astro'
+
+import Login from './Login.astro'
+import Register from './Register.astro'
+---
+<div class="header">
+  <Logo />
+  <div class="navItems">
+    <Features />
+    <Company />
+    <Careers />
+    <About />
+  </div>
+  <div class="authItems">
+    <Login />
+    <Register />
+  </div>
+
+</div>
+
+<style>
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin: 1rem 1rem;
+    padding: 0;
+    justify-content: flex-start;
+
+    font-size: 12px;
+
+  }
+
+  .navItems {
+    margin-left: 8%;
+  }
+
+  .navItems :global(a) {
+    color: var(--medium-gray);
+    text-decoration: none;
+
+  }
+
+  .navItems :global(img) {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .authItems {
+    margin-left: auto;
+  }
+
+  .authItems :global(a) {
+    color: var(--medium-gray);
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navItems {
+      display: none;
+    }
+    .authItems {
+      display: none;
+    }
+  }
+</style>

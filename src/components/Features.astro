@@ -1,0 +1,75 @@
+<div class="container">
+  <a href="#" id="features-link">Features</a><img id="dropdown-toggle" src="../../images/icon-arrow-down.svg">
+  <ul id="dropdown-menu">
+    <li><img src="../../images/icon-todo.svg" alt=""><a href="#">Todo List</a></li>
+    <li><img src="../../images/icon-calendar.svg" alt=""><a href="#">Calendar</a></li>
+    <li><img src="../../images/icon-reminders.svg" alt=""><a href="#">Reminders</a></li>
+    <li><img src="../../images/icon-planning.svg" alt=""><a href="#">Planning</a></li>
+  </ul>
+</div>
+
+<style>
+  .container {
+    position: relative;
+  }
+
+  #features-link {
+    color: var(--medium-gray);
+  }
+
+  #features-link:hover {
+    color: var(--almost-black);
+  }
+
+  #dropdown-toggle {
+    color: var(--medium-gray);
+    cursor: pointer;
+  }
+
+  #dropdown-toggle:hover {
+    color: var(--almost-black);
+  }
+
+  #dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    font-size: 10px;
+    top: 100%;
+    right: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  #dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #dropdown-menu li {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 1rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ul = document.getElementById('dropdown-menu');
+    const img = document.getElementById('dropdown-toggle');
+
+    img.addEventListener('click', () => {
+      if (ul.classList.contains('show')) {
+        ul.classList.remove('show');
+        img.src = '../../images/icon-arrow-down.svg';
+      } else {
+        ul.classList.add('show');
+        img.src = '../../images/icon-arrow-up.svg';
+      }
+    });
+  });
+</script>
